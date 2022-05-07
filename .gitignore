@@ -59,8 +59,4 @@ captures/
 gen-external-apklibs
 
 # Thumbnails
-<<<<<<< HEAD
 ._*
-=======
-._*
->>>>>>> 544bb33 (Create .gitignore)
