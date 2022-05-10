@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">My_Parking_app</string>
+    <string name="freeParking"> free</string>
+    <string name="usedParking"> busy</string>
 </resources>
