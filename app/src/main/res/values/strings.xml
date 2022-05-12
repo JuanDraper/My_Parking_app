@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">My_Parking_app</string>
-    <string name="freeParking"> free</string>
-    <string name="usedParking"> busy</string>
+    <string name="date">Monday 25, May, 2022</string>
+    <string name="hour">08:30 PM</string>
+    <string name="busy">12 busy</string>
+    <string name="free">18 free </string>
+    <string name="free2">free</string>
+    <string name="addReservation">Add_Reservation</string>
 </resources>
