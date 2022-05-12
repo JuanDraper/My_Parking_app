@@ -12,8 +12,8 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerView)
         recyclerview.layoutManager = LinearLayoutManager(this)
-        val data = ArrayList<parkingList>()
-        val adapter = CustomAdapter(data, {parkingList -> })
+        val data = ArrayList<ParkingList>()
+        val adapter = CustomAdapter(data, {ParkingList -> })
         recyclerview.adapter = adapter
     }
 }

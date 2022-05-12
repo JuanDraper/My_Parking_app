@@ -6,13 +6,15 @@ import android.widget.TextView
 import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter(private val mList: List<parkingList>, private val onClick: (parkingList) -> Unit) :
+class CustomAdapter(private val mList: List<ParkingList>, private val onClick: (ParkingList) -> Unit) :
     RecyclerView.Adapter<CustomAdapter.ParkingViewHolder>(){
 
-    class ParkingViewHolder(itemView: View, val onClick: (parkingList) -> Unit) :
+    class ParkingViewHolder(itemView: View, val onClick: (ParkingList) -> Unit) :
         RecyclerView.ViewHolder(itemView) {
-        private val parkingTextView: TextView = itemView.findViewById(R.id.parking_text)
-        private var currentParking: parkingList? = null
+        private val id: TextView = itemView.findViewById(R.id.lot_id)
+        private val date: TextView = itemView.findViewById(R.id.date)
+        private val hour: TextView = itemView.findViewById(R.id.hour)
+        private var currentParking: ParkingList? = null
 
         init {
             itemView.setOnClickListener{
@@ -23,9 +25,17 @@ class CustomAdapter(private val mList: List<parkingList>, private val onClick: (
 
         }
 
-        fun bind(parking: parkingList){
+        fun bind(parking: ParkingList){
             currentParking = parking
-            parkingTextView.text = parking.id.toString()
+            id.text = parking.id
+            if(parking.vacancy) {
+                date.text = parking.date
+                hour.text = parking.hour
+            }
+            else{
+                date.setText(R.string.free2)
+                hour.text = ""
+            }
         }
 
             }
