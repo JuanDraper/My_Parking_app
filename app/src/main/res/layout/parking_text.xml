@@ -11,11 +11,9 @@
 
     <TextView
         android:id="@+id/hour"
-        android:layout_width="272dp"
-        android:layout_height="23dp"
-
-
-        android:layout_marginStart="20dp"
+        android:layout_width="@dimen/ParkingTextHourWidth"
+        android:layout_height="@dimen/ParkingTextHourHeight"
+        android:layout_marginStart="@dimen/ParkingTextHourWMarginStart"
         android:text="@string/hour"
         android:textColor="#757575"
         app:layout_constraintBottom_toBottomOf="@+id/figId"
@@ -24,25 +22,18 @@
 
     <TextView
         android:id="@+id/date"
-
-        android:layout_width="272dp"
-        android:layout_height="23dp"
-
-
-        android:layout_marginTop="14dp"
+        android:layout_width="@dimen/ParkingTextHourWidth"
+        android:layout_height="@dimen/ParkingTextHourHeight"
+        android:layout_marginTop="@dimen/parkingTextDateMarginTop"
         android:text="@string/date"
-
-
         app:layout_constraintStart_toStartOf="@+id/hour"
         app:layout_constraintTop_toTopOf="@+id/figId" />
 
     <FrameLayout
         android:id="@+id/figId"
-        android:layout_width="60dp"
-
-
-        android:layout_height="60dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="@dimen/frameLayout"
+        android:layout_height="@dimen/frameLayout"
+        android:layout_marginStart="@dimen/frameLayoutMarginStart"
         android:background="@drawable/elipse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -50,7 +41,7 @@
     <TextView
         android:id="@+id/lot_id"
         android:layout_width="wrap_content"
-        android:layout_height="31dp"
+        android:layout_height="@dimen/ParkingTextIdHeight"
         android:textColor="#546E7A"
         app:layout_constraintBottom_toBottomOf="@+id/figId"
         app:layout_constraintEnd_toEndOf="@+id/figId"
