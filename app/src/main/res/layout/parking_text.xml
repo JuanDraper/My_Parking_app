@@ -2,23 +2,60 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/parking_text"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/parking_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="parent"
+        android:id="@+id/hour"
+        android:layout_width="272dp"
+        android:layout_height="23dp"
+
+
+        android:layout_marginStart="20dp"
+        android:text="@string/hour"
+        android:textColor="#757575"
+        app:layout_constraintBottom_toBottomOf="@+id/figId"
+        app:layout_constraintStart_toEndOf="@+id/figId"
+        app:layout_constraintTop_toBottomOf="@id/date" />
+
+    <TextView
+        android:id="@+id/date"
+
+        android:layout_width="272dp"
+        android:layout_height="23dp"
+
+
+        android:layout_marginTop="14dp"
+        android:text="@string/date"
+
+
+        app:layout_constraintStart_toStartOf="@+id/hour"
+        app:layout_constraintTop_toTopOf="@+id/figId" />
+
+    <FrameLayout
+        android:id="@+id/figId"
+        android:layout_width="60dp"
+
+
+        android:layout_height="60dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/elipse"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/lot_id"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toBaselineOf="@+id/parking_text"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_height="31dp"
+        android:textColor="#546E7A"
+        app:layout_constraintBottom_toBottomOf="@+id/figId"
+        app:layout_constraintEnd_toEndOf="@+id/figId"
+        app:layout_constraintStart_toStartOf="@+id/figId"
+        app:layout_constraintTop_toTopOf="@+id/figId"
+        tools:text="1" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
