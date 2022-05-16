@@ -10,7 +10,7 @@ class LotResDetViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val StartDate: TextView = itemView.findViewById(R.id.StartingDate)
         private val StartHour: TextView = itemView.findViewById(R.id.StartingHour)
         private val FinishDate: TextView = itemView.findViewById(R.id.FinishDate)
-        private val FinishHour: TextView = itemView.findViewById(R.id.FinishHOur)
+        private val FinishHour: TextView = itemView.findViewById(R.id.FinishHour)
                 fun bind(reservationDetail: RerservationDetails){
                 StartDate.text = reservationDetail.StartDate
                 StartHour.text = reservationDetail.StartHour
