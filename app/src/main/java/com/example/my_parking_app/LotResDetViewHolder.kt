@@ -11,6 +11,7 @@ class LotResDetViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val StartHour: TextView = itemView.findViewById(R.id.StartingHour)
         private val FinishDate: TextView = itemView.findViewById(R.id.FinishDate)
         private val FinishHour: TextView = itemView.findViewById(R.id.FinishHour)
+        val DeleteBTn: Button = itemView.findViewById(R.id.deleteBtn)
                 fun bind(reservationDetail: RerservationDetails){
                 StartDate.text = reservationDetail.StartDate
                 StartHour.text = reservationDetail.StartHour
