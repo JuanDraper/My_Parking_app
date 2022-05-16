@@ -21,29 +21,5 @@
     <dimen name="frameLayout">60dp</dimen>
     <dimen name="frameLayoutMarginStart">16dp</dimen>
     <dimen name="ParkingTextIdHeight">31dp</dimen>
-    <dimen name="cardViewLayoutHeight">182dp</dimen>
-    <dimen name="cardViewMarginStart">2dp</dimen>
-    <dimen name="cardViewMarginTop">15dp</dimen>
-    <dimen name="cardViewMarginEnd">2dp</dimen>
-    <dimen name="cardViewElevation">5dp</dimen>
-    <dimen name="cardViewCardCornerRadius">10dp</dimen>
-    <dimen name="StartingDatewidth">120dp</dimen>
-    <dimen name="StartingDateHeight">40dp</dimen>
-    <dimen name="StartingDatePaddingTop">5dp</dimen>
-    <dimen name="BlankWidth">120dp</dimen>
-    <dimen name="BlankHeight">40dp</dimen>
-    <dimen name="BlankPaddingTop">15dp</dimen>
-    <dimen name="StartingHourWidth">120dp</dimen>
-    <dimen name="StartingHourHeight">40dp</dimen>
-    <dimen name="StartingHourMarginBottom">16dp</dimen>
-    <dimen name="FinishDateWidth">120dp</dimen>
-    <dimen name="FinishDateHeight">40dp</dimen>
-    <dimen name="FinishDatePaddingTop">5dp</dimen>
-    <dimen name="blank2Width">120dp</dimen>
-    <dimen name="blank2Height">40dp</dimen>
-    <dimen name="blank2PaddingTop">15dp</dimen>
-    <dimen name="FinishHourWidth">120dp</dimen>
-    <dimen name="deleteBtnMarginBotom">4dp</dimen>
-    <dimen name="recyclerView2Margin">30dp</dimen>
 
-    </resources>
+</resources>
