@@ -6,4 +6,5 @@
     <string name="free">18 free </string>
     <string name="free2">free</string>
     <string name="addReservation">Add_Reservation</string>
+    <string name="delete">DELETE</string>
 </resources>
