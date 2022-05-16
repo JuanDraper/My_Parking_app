@@ -20,7 +20,6 @@
         android:layout_height="@dimen/StartingDateHeight"
         android:gravity="center_horizontal"
         android:paddingTop="@dimen/StartingDatePaddingTop"
-        android:text=""
         app:layout_constraintEnd_toStartOf="@+id/FinishDate"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/FinishDate" />
@@ -30,7 +29,6 @@
         android:layout_width="@dimen/BlankWidth"
         android:layout_height="@dimen/BlankHeight"
         android:paddingTop="@dimen/BlankPaddingTop"
-        android:text=""
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@id/StartingDate"
         app:layout_constraintTop_toBottomOf="@id/StartingDate" />
@@ -40,7 +38,6 @@
         android:layout_width="@dimen/StartingHourWidth"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/StartingHourMarginBottom"
-        android:text=""
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@+id/StartingDate"
         app:layout_constraintTop_toBottomOf="@+id/Blank"
@@ -52,7 +49,6 @@
         android:layout_height="@dimen/FinishDateHeight"
         android:gravity="center_horizontal"
         android:paddingTop="@dimen/FinishDatePaddingTop"
-        android:text=""
         app:flow_verticalAlign="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/StartingDate"
@@ -63,7 +59,6 @@
         android:layout_width="@dimen/blank2Width"
         android:layout_height="@dimen/blank2Height"
         android:paddingTop="@dimen/blank2PaddingTop"
-        android:text=""
         android:textAlignment="center"
         app:layout_constraintStart_toStartOf="@id/FinishDate"
         app:layout_constraintTop_toBottomOf="@id/FinishDate" />
@@ -72,7 +67,6 @@
         android:id="@+id/FinishHour"
         android:layout_width="@dimen/FinishHourWidth"
         android:layout_height="wrap_content"
-        android:text=""
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="@+id/blank2"
         app:layout_constraintTop_toBottomOf="@+id/blank2" />
