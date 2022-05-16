@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="progress_bar">32dp</dimen>
+    <dimen name="recyclerView">30dp</dimen>
+    <dimen name="recyclerView2">20dp</dimen>
+    <dimen name="mainactViewWidth">0dp</dimen>
+    <dimen name="mainactViewHeight">83dp</dimen>
+    <dimen name="recyclerViewWidth">341dp</dimen>
+    <dimen name="recyclerViewHeight">522dp</dimen>
+    <dimen name="busyHeight">0dp</dimen>
+    <dimen name="busyMarginStart">30dp</dimen>
+    <dimen name="freeHeight">0dp</dimen>
+    <dimen name="freeTop">61dp</dimen>
+    <dimen name="freeEnd">28dp</dimen>
+    <dimen name="FABEnd">4dp</dimen>
+    <dimen name="FABBottom">21dp</dimen>
+    <dimen name="ParkingTextHourWidth">272dp</dimen>
+    <dimen name="ParkingTextHourHeight">23dp</dimen>
+    <dimen name="ParkingTextHourWMarginStart">20dp</dimen>
+    <dimen name="parkingTextDateMarginTop">14dp</dimen>
+    <dimen name="frameLayout">60dp</dimen>
+    <dimen name="frameLayoutMarginStart">16dp</dimen>
+    <dimen name="ParkingTextIdHeight">31dp</dimen>
+
+</resources>
