@@ -80,9 +80,11 @@
         android:layout_marginEnd="@dimen/FABEnd"
         android:layout_marginBottom="@dimen/FABBottom"
         android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
         android:contentDescription="@string/addReservation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-        app:srcCompat="@drawable/fab_icon_asset" />
+        android:src="@android:drawable/ic_input_add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

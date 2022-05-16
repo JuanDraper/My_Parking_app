@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+   <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/cardViewLayoutHeight"
+    android:layout_marginStart="@dimen/cardViewMarginStart"
+    android:layout_marginTop="@dimen/cardViewMarginTop"
+    android:layout_marginEnd="@dimen/cardViewMarginEnd"
+    android:background="@drawable/cardview_res"
+    android:elevation="@dimen/cardViewElevation"
+    app:cardCornerRadius="@dimen/cardViewCardCornerRadius">
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/StartingDate"
+        android:layout_width="@dimen/StartingDatewidth"
+        android:layout_height="@dimen/StartingDateHeight"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/StartingDatePaddingTop"
+        app:layout_constraintEnd_toStartOf="@+id/FinishDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/FinishDate" />
+
+    <TextView
+        android:id="@+id/Blank"
+        android:layout_width="@dimen/BlankWidth"
+        android:layout_height="@dimen/BlankHeight"
+        android:paddingTop="@dimen/BlankPaddingTop"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@id/StartingDate"
+        app:layout_constraintTop_toBottomOf="@id/StartingDate" />
+
+    <TextView
+        android:id="@+id/StartingHour"
+        android:layout_width="@dimen/StartingHourWidth"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/StartingHourMarginBottom"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@+id/StartingDate"
+        app:layout_constraintTop_toBottomOf="@+id/Blank"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/FinishDate"
+        android:layout_width="@dimen/FinishDateWidth"
+        android:layout_height="@dimen/FinishDateHeight"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/FinishDatePaddingTop"
+        app:flow_verticalAlign="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/StartingDate"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/blank2"
+        android:layout_width="@dimen/blank2Width"
+        android:layout_height="@dimen/blank2Height"
+        android:paddingTop="@dimen/blank2PaddingTop"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="@id/FinishDate"
+        app:layout_constraintTop_toBottomOf="@id/FinishDate" />
+
+    <TextView
+        android:id="@+id/FinishHour"
+        android:layout_width="@dimen/FinishHourWidth"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="@+id/blank2"
+        app:layout_constraintTop_toBottomOf="@+id/blank2" />
+
+    <Button
+        android:id="@+id/deleteBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/deleteBtnMarginBotom"
+        android:text="@string/delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/FinishDate" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
