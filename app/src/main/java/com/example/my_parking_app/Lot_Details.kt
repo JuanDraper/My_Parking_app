@@ -5,7 +5,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class Lot_Details : AppCompatActivity(), OnItemClicked{
+class Lot_Details : AppCompatActivity(), OnItemClicked {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_lot_details)
@@ -14,6 +14,8 @@ class Lot_Details : AppCompatActivity(), OnItemClicked{
         recyclerview.layoutManager = LinearLayoutManager(this)
         val data = ArrayList<RerservationDetails>()
         val adapter = LotRDetAdapter(Test.reservations, this)
-
+        recyclerview.adapter = adapter
+        adapter.notifyDataSetChanged()
     }
+
 }
