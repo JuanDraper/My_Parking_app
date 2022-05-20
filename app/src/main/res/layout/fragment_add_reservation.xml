@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="@dimen/spinnerWidth"
+        android:layout_height="@dimen/spinnerHeight"
+        android:layout_marginTop="@dimen/spinnerMarginTop"
+        android:background="@drawable/lots"
+        android:contentDescription="@string/spinner"
+        android:entries="@array/lotSpinner"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:paddingStart="@dimen/spinnerPadding"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:layout_width="@dimen/DateWidth"
+        android:id="@+id/StartDate"
+        android:layout_height="@dimen/DateHeight"
+        android:layout_marginTop="@dimen/DateMarginTop"
+        android:background="@drawable/lots"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/DatePadding"
+        android:text="@string/startDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        tools:ignore="RtlSymmetry" />
+
+    <TextView
+        android:layout_width="@dimen/DateWidth"
+        android:id="@+id/EndDate"
+        android:layout_height="@dimen/DateHeight"
+        android:layout_marginTop="@dimen/DateMarginTop"
+        android:background="@drawable/lots"
+        android:gravity="center_vertical"
+        android:paddingStart="@dimen/DatePadding"
+        android:text="@string/endDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/StartDate"
+        tools:ignore="RtlSymmetry" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

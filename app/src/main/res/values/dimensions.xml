@@ -45,5 +45,15 @@
     <dimen name="FinishHourWidth">120dp</dimen>
     <dimen name="deleteBtnMarginBotom">4dp</dimen>
     <dimen name="recyclerView2Margin">30dp</dimen>
+    <dimen name="spinnerWidth">328dp</dimen>
+    <dimen name="spinnerHeight">48dp</dimen>
+    <dimen name="spinnerMarginTop">16dp</dimen>
+    <dimen name="spinnerPadding">16dp</dimen>
+    <dimen name="DateWidth">328dp</dimen>
+    <dimen name="DateHeight">48dp</dimen>
+    <dimen name="DateMarginTop">16dp</dimen>
+    <dimen name="DatePadding">16dp</dimen>
+
+
 
     </resources>
