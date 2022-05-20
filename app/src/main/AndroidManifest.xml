@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.My_Parking_app">
         <activity
+            android:name=".reservationActivity"
+            android:exported="false" />
+        <activity
             android:name=".Lot_Details"
             android:exported="false" />
         <activity

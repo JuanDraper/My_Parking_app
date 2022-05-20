@@ -1,11 +1,11 @@
 package com.example.my_parking_app
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class MainActivity : AppCompatActivity(), OnItemClicked {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity(), OnItemClicked {
         val adapter = CustomAdapter(Test.parkings, this)
         recyclerview.adapter = adapter
         adapter.notifyDataSetChanged()
+        val fab: FloatingActionButton = findViewById<FloatingActionButton>(R.id.floatingActionButton2)
+        fab.setOnClickListener{
+            val intent2 = Intent(this, reservationActivity::class.java)
+            startActivity(intent2)
+        }
     }
 
     override fun onLotClick(position: Int) {
