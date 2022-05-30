@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="dateStart." parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">#43A57A</item>
+        <item name="android:textColor">#080E09</item>
+    </style>
+
+    <style name="dateEnd" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:colorAccent">#43A57A</item>
+        <item name="android:textColor">#050706</item>
+    </style>
+
+
+
+</resources>

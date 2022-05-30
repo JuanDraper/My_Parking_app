@@ -7,4 +7,22 @@
     <string name="free2">free</string>
     <string name="addReservation">Add_Reservation</string>
     <string name="delete">DELETE</string>
+    <string name="spinner">lots available</string>
+    <string-array name="lotSpinner">
+        <item>lot 1</item>
+        <item>lot 2</item>
+        <item>lot 3</item>
+        <item>lot 4</item>
+        <item>lot 5</item>
+        <item>lot 6</item>
+        <item>lot 7</item>
+    </string-array>
+    >
+    <string name="startDate">Start date</string>
+    <string name="endDate">End date</string>
+    <string name="AuthCode">Authorization code</string>
+    <string name="SaveButton">Save</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>
