@@ -1,14 +1,14 @@
-package com.example.my_parking_app
+package com.example.my_parking_app.adapters
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
-import androidx.appcompat.view.menu.MenuView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.example.my_parking_app.*
+import com.example.my_parking_app.ViewHolders.LotResDetViewHolder
+import com.example.my_parking_app.Views.DeleteDialogFragment
+import com.example.my_parking_app.RerservationDetails
 
-class LotRDetAdapter(private val RDList: List<RerservationDetails>, private val onItemClicked: OnItemClicked):
+class LotRDetAdapter(private val RDList: List<RerservationDetails>, private val onItemClicked: OnItemClicked, private val compat : AppCompatActivity ):
     RecyclerView.Adapter<LotResDetViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LotResDetViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -18,13 +18,17 @@ class LotRDetAdapter(private val RDList: List<RerservationDetails>, private val 
     }
 
     override fun onBindViewHolder(holder: LotResDetViewHolder, position: Int) {
+
         val details = RDList[position]
         holder.bind(details)
         holder.DeleteBTn.setOnClickListener {
-            onItemClicked!!.onLotClick(position)
-            removeItem(position)
+            var dialog = DeleteDialogFragment()
+
+            dialog.show(compat.supportFragmentManager, "smth")
         }
     }
+
+
 
     override fun getItemCount(): Int {
         return RDList.size

@@ -1,10 +1,15 @@
-package com.example.my_parking_app
+package com.example.my_parking_app.Views
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.my_parking_app.OnItemClicked
+import com.example.my_parking_app.R
+import com.example.my_parking_app.RerservationDetails
+import com.example.my_parking_app.Test
+import com.example.my_parking_app.adapters.LotRDetAdapter
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 class Lot_Details : AppCompatActivity(), OnItemClicked {
@@ -15,7 +20,7 @@ class Lot_Details : AppCompatActivity(), OnItemClicked {
         val recyclerview = findViewById<RecyclerView>(R.id.recyclerView2)
         recyclerview.layoutManager = LinearLayoutManager(this)
         val data = ArrayList<RerservationDetails>()
-        val adapter = LotRDetAdapter(Test.reservations, this)
+        val adapter = LotRDetAdapter(Test.reservations, this, this)
         recyclerview.adapter = adapter
         adapter.notifyDataSetChanged()
         val fab: FloatingActionButton =

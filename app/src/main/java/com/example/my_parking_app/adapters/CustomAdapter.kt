@@ -1,10 +1,11 @@
-package com.example.my_parking_app
+package com.example.my_parking_app.adapters
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import androidx.appcompat.view.menu.ActionMenuItemView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.my_parking_app.OnItemClicked
+import com.example.my_parking_app.ParkingList
+import com.example.my_parking_app.R
+import com.example.my_parking_app.ViewHolders.ParkingViewHolder
 
 class   CustomAdapter(private val mList: List<ParkingList>, private val onItemClicked: OnItemClicked) :
     RecyclerView.Adapter<ParkingViewHolder>(){

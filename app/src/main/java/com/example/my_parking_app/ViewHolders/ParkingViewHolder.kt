@@ -1,8 +1,11 @@
-package com.example.my_parking_app
+package com.example.my_parking_app.ViewHolders
 
 import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.my_parking_app.ParkingList
+import com.example.my_parking_app.R
+
 class ParkingViewHolder(itemView: View) :
     RecyclerView.ViewHolder(itemView) {
     private val id: TextView = itemView.findViewById(R.id.lot_id)
