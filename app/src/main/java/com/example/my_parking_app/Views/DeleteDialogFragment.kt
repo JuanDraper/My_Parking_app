@@ -10,16 +10,9 @@ import com.example.domain.entities.ReservationDetails
 import com.example.my_parking_app.R
 import com.example.my_parking_app.tools.DeleteDialogCallBack
 
-class  DeleteDialogFragment(private val dialogCallBack: DeleteDialogCallBack,
-                           private val reservation: ReservationDetails
-) :
-    DialogFragment() {
+class DeleteDialogFragment(private val dialogCallBack: DeleteDialogCallBack, private val reservation: ReservationDetails) : DialogFragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val rootView: View = inflater.inflate(R.layout.delete_dialog_fragment, container, false)
 
         rootView.findViewById<View>(R.id.cancelButton).setOnClickListener { dismiss() }
@@ -33,10 +26,7 @@ class  DeleteDialogFragment(private val dialogCallBack: DeleteDialogCallBack,
     }
 
     companion object {
-        fun newInstance(
-            dialogCallBack: DeleteDialogCallBack,
-            reservation: ReservationDetails
-        ): DeleteDialogFragment {
+        fun newInstance(dialogCallBack: DeleteDialogCallBack, reservation: ReservationDetails): DeleteDialogFragment {
             return DeleteDialogFragment(dialogCallBack, reservation)
         }
     }

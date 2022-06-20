@@ -18,11 +18,7 @@ class ReservationViewModel(private val deleteReservation: DeleteReservationUseCa
             return _delete
         }
 
-    fun deleteReservation(
-        parkingId: String,
-        authCode: String,
-        reservation: ReservationDetails
-    ) =
+    fun deleteReservation(parkingId: String, authCode: String, reservation: ReservationDetails) =
         viewModelScope.launch {
             if (reservation.authorizationCode == authCode) {
                 deleteReservation(parkingId, reservation, true)

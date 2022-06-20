@@ -6,7 +6,7 @@ import com.example.domain.entities.ReservationDetails
 import com.example.domain.utils.Result
 import com.example.domain.repository.DeleteReservationRepo
 
-class DeleteReservationImp(private val deleteFromRemote: Service, private val deleteFromLocal: ParkingDataBase): DeleteReservationRepo {
+class DeleteReservationRepoImp(private val deleteFromRemote: Service, private val deleteFromLocal: ParkingDataBase): DeleteReservationRepo {
 
 
 
@@ -27,7 +27,7 @@ class DeleteReservationImp(private val deleteFromRemote: Service, private val de
             }
             is Result.Failure -> {
                 Result.Failure(result.exception)
-            }
+            } else -> return Result()
         }
     }
 

@@ -23,15 +23,12 @@ class ReservationFragment : Fragment(R.layout.lot_details_fragment), DeleteDialo
 
     private lateinit var onParkingLot: LotReservation
 
-    private val viewModel by lazy {
-        ReservationViewModelProvider(activity).get(ReservationViewModel::class.java)
-    }
+    private val viewModel by lazy { ReservationViewModelProvider(activity).get(ReservationViewModel::class.java) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = LotDetailsFragmentBinding.bind(view)
         binding.resRecycler.layoutManager = LinearLayoutManager(activity)
-
 
         arguments?.let { onParkingLot = it.getSerializable("lot") as LotReservation }
         binding.parkingLotNumber.text = onParkingLot.id.toString()
@@ -39,18 +36,11 @@ class ReservationFragment : Fragment(R.layout.lot_details_fragment), DeleteDialo
 
         binding.imgButton.setOnClickListener { onBackButtonSelected() }
 
-        binding.floatingAddButton.setOnClickListener {
-            binding.root
-                .findNavController()
-                .navigate(
-                    R.id.action_reservationsFragment_to_addReservationFragment
-                )
-        }
+        binding.floatingAddButton.setOnClickListener { binding.root.findNavController().navigate(R.id.action_reservationsFragment_to_addReservationFragment) }
     }
 
     private fun initRecyclerView(resList: List<ReservationDetails>) {
-        binding.resRecycler.adapter =
-            LotRDetAdapter(resList) { reservation -> onButtonDeleteSelected(reservation) }
+        binding.resRecycler.adapter = LotRDetAdapter(resList) { reservation -> onButtonDeleteSelected(reservation) }
     }
 
     private fun onButtonDeleteSelected(res: ReservationDetails) {
@@ -59,11 +49,7 @@ class ReservationFragment : Fragment(R.layout.lot_details_fragment), DeleteDialo
     }
 
     private fun onBackButtonSelected() {
-        binding.root
-            .findNavController()
-            .navigate(
-                R.id.action_reservationsFragment_to_parkingLotsFragment
-            ) // switching screen to parkingLotsFragment
+        binding.root.findNavController().navigate(R.id.action_reservationsFragment_to_parkingLotsFragment) // switching screen to parkingLotsFragment
     }
 
     override fun onDeleteClicked(authCode: String, res: ReservationDetails) {
@@ -71,11 +57,8 @@ class ReservationFragment : Fragment(R.layout.lot_details_fragment), DeleteDialo
 
         viewModel.success.observe(viewLifecycleOwner) { deleted ->
             if (deleted) {
-                binding.root
-                    .findNavController()
-                    .navigate(R.id.action_reservationsFragment_to_parkingLotsFragment)
-                Toast.makeText(activity, "reservation deleted", Toast.LENGTH_SHORT)
-                    .show()
+                binding.root.findNavController().navigate(R.id.action_reservationsFragment_to_parkingLotsFragment)
+                Toast.makeText(activity, "reservation deleted", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(activity, "Incorrect authorization code, try again", Toast.LENGTH_SHORT).show()
             }

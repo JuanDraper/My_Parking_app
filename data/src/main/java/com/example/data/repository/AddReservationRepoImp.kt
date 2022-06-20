@@ -9,9 +9,10 @@ import com.example.domain.entities.ReservationDetails
 import com.example.domain.repository.AddReservationRepo
 import com.example.domain.utils.Result
 
-class AddReservationImp(
+class AddReservationRepoImp(
     private val addService: Service = Service(),
     private val dataBase: ParkingDataBase
+
 ) : AddReservationRepo {
 
   override suspend fun addReservation(
@@ -61,13 +62,15 @@ class AddReservationImp(
                 res.startDate.toString(),
                 res.endDate.toString(),
                 res.parkingLot)
+
+        val result = addService.addReservation(id, newReservation)
         return when (val result = addService.addReservation(id, newReservation)) {
             is Result.Success -> {
                 Result.Success(result.value as Boolean)
             }
             is Result.Failure -> {
                 Result.Failure(result.exception)
-            }
+            }else -> return Result()
         }
     }
 }

@@ -32,18 +32,11 @@ class LotFragment : Fragment(R.layout.parking_lot_fragment) {
             updateRecyclerView(lotReservationList)
         }
 
-        binding.floatingAddButton.setOnClickListener {
-            binding.root
-                .findNavController()
-                .navigate(
-                    R.id.action_parkingLotsFragment_to_addReservationFragment
-                )
-        }
+        binding.floatingAddButton.setOnClickListener { binding.root.findNavController().navigate(R.id.action_parkingLotsFragment_to_addReservationFragment) }
     }
 
-    private fun updateRecyclerView(newLotList: List<LotReservation>) {
-        binding.recyclerView.adapter =
-            CustomAdapter(newLotList) { parkingSpot -> onParkingSpotSelected(parkingSpot) }
+    private fun updateRecyclerView(newList: List<LotReservation>) {
+        binding.recyclerView.adapter = CustomAdapter(newList) { parkingLot -> onParkingSpotSelected(parkingLot) }
     }
 
     private fun updateProgressBar(parkingAvailability: Int) {

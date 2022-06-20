@@ -1,6 +1,6 @@
 package com.example.domain.utils
 
-sealed class Result<T> {
+open class Result<T> {
 
     data class Success<T>(val value: T?) : Result<T>()
 

@@ -7,7 +7,7 @@ import com.example.domain.entities.MappedReservationList
 import com.example.domain.utils.Result
 import com.example.domain.repository.GetReservationListRepo
 
-class GetReservationListImp(private val service :Service, private val dataBase : ParkingDataBase): GetReservationListRepo {
+class ReservationListRepoImp(private val service :Service, private val dataBase : ParkingDataBase): GetReservationListRepo {
 
 
 
@@ -27,7 +27,7 @@ class GetReservationListImp(private val service :Service, private val dataBase :
             }
             is Result.Failure -> {
                 Result.Failure(result.exception)
-            }
+            }else -> return Result()
         }
 
     }

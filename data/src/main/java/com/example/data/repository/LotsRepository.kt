@@ -12,7 +12,7 @@ import com.example.domain.utils.Result
 import com.example.domain.repository.GetLotListRepo
 
 
-class GetLotListImp( private val service : Service, private val dataBase : ParkingDataBase): GetLotListRepo {
+class LotListRepoImp(private val service : Service, private val dataBase : ParkingDataBase): GetLotListRepo {
 
 
     override suspend fun getLotList(parkingId: String, localDataBase: Boolean): Result<MappedParkingLotList> {
@@ -38,7 +38,7 @@ class GetLotListImp( private val service : Service, private val dataBase : Parki
             }
             is Result.Failure -> {
                 Result.Failure(result.exception)
-            }
+            } else -> return Result()
         }
     }
 

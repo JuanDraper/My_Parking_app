@@ -4,7 +4,7 @@ import android.content.Context
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider.NewInstanceFactory
 import com.example.data.data_base.ParkingDataBase
-import com.example.data.repository.DeleteReservationImp
+import com.example.data.repository.DeleteReservationRepoImp
 import com.example.data.service.Service
 import com.example.domain.use_cases.DeleteReservationUseCase
 
@@ -13,7 +13,7 @@ class ReservationViewModelFactory(private val context: Context) : NewInstanceFac
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return if (modelClass == ReservationViewModel::class.java) {
             ReservationViewModel(DeleteReservationUseCase().apply {
-                deleteReservationRepository = DeleteReservationImp(
+                deleteReservationRepository = DeleteReservationRepoImp(
                     Service(),
                     ParkingDataBase.getInstance(context)
                 )

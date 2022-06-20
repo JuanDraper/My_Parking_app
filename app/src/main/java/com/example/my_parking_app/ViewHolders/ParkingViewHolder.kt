@@ -8,9 +8,7 @@ import com.example.my_parking_app.databinding.ParkingTextBinding
 import com.example.my_parking_app.tools.DateFormatter
 import com.example.my_parking_app.tools.Text
 
-class ParkingLotViewHolder
-    (
-    view: View): RecyclerView.ViewHolder(view) {
+class ParkingLotViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ParkingTextBinding.bind(view)
     private lateinit var reservation: ReservationDetails
@@ -27,8 +25,7 @@ class ParkingLotViewHolder
             reservation = lot.reservations[0]
             binding.markAsFree.text = ""
             binding.day.text = date.dayFormat(reservation.startDate)
-            binding.monthAndYear.text =
-                date.monthYearFormat(reservation.startDate)
+            binding.monthAndYear.text = date.monthYearFormat(reservation.startDate)
             binding.hourOfDay.text = date.hourFormat(reservation.startDate)
         }
 
@@ -37,6 +34,5 @@ class ParkingLotViewHolder
         binding.lotNumber.text = lot.id.toString()
     }
 }
-
 
 

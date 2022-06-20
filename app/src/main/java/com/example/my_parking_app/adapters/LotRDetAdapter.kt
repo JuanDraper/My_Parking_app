@@ -1,4 +1,5 @@
 package com.example.my_parking_app.adapters
+
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -6,11 +7,16 @@ import com.example.domain.entities.ReservationDetails
 import com.example.my_parking_app.R
 import com.example.my_parking_app.ViewHolders.LotResDetViewHolder
 
-class LotRDetAdapter(private val itemsList: List<ReservationDetails>, private val onClickListener:(ReservationDetails) -> Unit): RecyclerView.Adapter<LotResDetViewHolder>() {
+class LotRDetAdapter(
+    private val itemsList: List<ReservationDetails>,
+    private val onClickListener: (ReservationDetails) -> Unit
+) : RecyclerView.Adapter<LotResDetViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LotResDetViewHolder {
         var layoutInflater = LayoutInflater.from(parent.context)
-        return LotResDetViewHolder(layoutInflater.inflate(R.layout.lot_reservation_detail, parent, false))
+        return LotResDetViewHolder(
+            layoutInflater.inflate(R.layout.lot_reservation_detail, parent, false)
+        )
     }
 
     override fun onBindViewHolder(holder: LotResDetViewHolder, position: Int) {
@@ -19,7 +25,6 @@ class LotRDetAdapter(private val itemsList: List<ReservationDetails>, private va
     }
 
     override fun getItemCount(): Int = itemsList.size
-
 }
 
 
