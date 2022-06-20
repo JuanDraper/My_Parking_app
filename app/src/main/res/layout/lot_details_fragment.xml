@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/resLayout"
+    tools:context=".Views.MainActivity"
+    >
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/EightyDP"
+        android:background="@color/grey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tbLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imgButton"
+                android:layout_width="@dimen/DeleteDialogButtonLayoutHeight"
+                android:layout_height="@dimen/DeleteDialogButtonLayoutHeight"
+                android:background="@color/grey"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="@+id/tbLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tbLayout"
+                app:srcCompat="?attr/actionModeCloseDrawable"
+                tools:ignore="NotSibling"
+                android:contentDescription="@string/image"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/parkingLot"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/fifteenDP"
+                android:text="@string/lot"
+                android:textColor="@color/white"
+                android:textSize="@dimen/AddReservationParkingLotTextSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tbLayout"
+                app:layout_constraintStart_toEndOf="@+id/imgButton"
+                app:layout_constraintTop_toTopOf="@+id/tbLayout"
+                tools:ignore="RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/parkingLotNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/fiveDP"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/AddReservationParkingLotTextSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tbLayout"
+                app:layout_constraintStart_toEndOf="@+id/parkingLot"
+                app:layout_constraintTop_toTopOf="@+id/tbLayout"
+                tools:ignore="RtlSymmetry" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/resRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/Odp"
+        android:layout_marginVertical="@dimen/fifteenDP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingAddButton"
+        android:layout_width="@dimen/EightyDP"
+        android:layout_height="@dimen/EightyDP"
+        android:layout_marginEnd="@dimen/fortyDP"
+        android:layout_marginBottom="@dimen/fortyDP"
+        android:clickable="true"
+        app:fabCustomSize="@dimen/EightyDP"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:maxImageSize="@dimen/seventyDP"
+        android:backgroundTint="@color/grey"
+        app:srcCompat="@android:drawable/ic_menu_add"
+        android:contentDescription="@string/image"
+        android:focusable="true" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

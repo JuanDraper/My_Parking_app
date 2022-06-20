@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.my_parking_app">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -9,12 +10,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.My_Parking_app">
-        <activity
-            android:name=".Views.reservationActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Views.Lot_Details"
-            android:exported="false" />
         <activity
             android:name=".Views.MainActivity"
             android:exported="true">

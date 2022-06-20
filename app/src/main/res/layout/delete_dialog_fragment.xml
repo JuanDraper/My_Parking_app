@@ -1,68 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/resLayout"
     android:layout_width="match_parent"
-    android:layout_height="380dp">
+    android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="212dp"
-        android:layout_height="42dp"
-        android:layout_marginStart="16dp"
-        android:text="Delete Reservation"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintStart_toStartOf="parent" />
+    android:layout_marginHorizontal="@dimen/DeleteDialogResLayoutMarginHorizontal"
+    android:layout_marginVertical="@dimen/DeleteDialogResLayoutMarginVertical"
+    android:background="@color/white">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="173dp"
-        android:layout_marginTop="69dp"
-        android:layout_marginBottom="68dp"
-        android:text="Are you sure you want to delete this reservation? Please input the authorization code to confirm."
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardItem"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
-        android:layout_width="82dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="66dp"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toTopOf="@+id/textView2" />
+        <TextView
+            android:id="@+id/startDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/DeleteDialogStartDateMarginStart"
+            android:layout_marginTop="@dimen/DeleteDialogStartDateMarginTop"
+            android:paddingTop="@dimen/DeleteDialogStartDatePaddingTop"
+            android:text="@string/deleteReservation"
+            android:textColor="@color/black"
+            android:textSize="@dimen/DeleteDialogStartDateTextSize"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/cardItem"
+            app:layout_constraintTop_toTopOf="@+id/cardItem" />
 
-    <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
-        android:layout_width="345dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="4dp"
-        android:hint="Authorization code"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <TextView
+            android:id="@+id/textDeleteDialog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="2dp"
-        android:text="OK"
-        app:layout_constraintBaseline_toBaselineOf="@+id/button2"
-        app:layout_constraintEnd_toEndOf="@+id/textInputEditText" />
+            android:layout_marginHorizontal="@dimen/DeleteDialogTextDeleteDialogMarginHorizontal"
+            android:layout_marginTop="@dimen/DeleteDialogTextDeleteDialogMarginTop"
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="312dp"
-        android:layout_marginEnd="6dp"
-        android:text="Cancel"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+            android:text="@string/deleteDialogText"
+            android:textColor="@color/black"
+            android:textSize="@dimen/DeleteDialogTextDeleteDialogTextSize"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startDate" />
+
+
+        <EditText
+            android:id="@+id/authCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginHorizontal="@dimen/DeleteDialogAuthCodeMarginHorizontal"
+            android:layout_marginTop="@dimen/DeleteDialogAuthCodeMarginTop"
+            android:backgroundTint="@color/black"
+            android:hint="@string/hint"
+            android:inputType="textPassword"
+
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textDeleteDialog"
+            tools:ignore="Autofill" />
+
+        <Button
+            android:id="@+id/deleteButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/DeleteDialogButtonLayoutHeight"
+
+            android:layout_marginHorizontal="@dimen/DeleteDialogButtonMarginHorizontal"
+            android:layout_marginTop="@dimen/DeleteDialogButtonMarginTop"
+            android:layout_marginBottom="@dimen/DeleteDialogButtonMarginButton"
+
+            android:backgroundTint="@color/grey"
+            android:gravity="center"
+            android:text="@string/delete"
+            android:textColor="@color/black"
+
+            android:textSize="@dimen/TextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/authCode" />
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/DeleteDialogButtonLayoutHeight"
+
+            android:layout_marginHorizontal="@dimen/DeleteDialogButtonMarginHorizontal"
+
+            android:layout_marginTop="@dimen/DeleteDialogButtonMarginTop"
+            android:backgroundTint="@color/grey"
+            android:gravity="center"
+            android:text="@string/cancel"
+
+            android:textColor="@color/black"
+            android:textSize="@dimen/TextSize"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/deleteButton"
+            app:layout_constraintTop_toBottomOf="@+id/authCode" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

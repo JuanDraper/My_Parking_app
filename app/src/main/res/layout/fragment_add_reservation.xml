@@ -2,50 +2,187 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/resLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fadingEdge="vertical"
+    tools:context=".Views.MainActivity">
+
+    <Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/EightyDP"
+        android:background="@color/grey"
+        app:layout_constraintTop_toTopOf="parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/tbLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:rotationX="6"
+            tools:layout_editor_absoluteX="16dp"
+            >
+
+
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="@dimen/AddReservationBackButtonWidth"
+                android:layout_height="@dimen/AddReservationBackButtonHeight"
+                android:background="@color/grey"
+                android:clickable="true"
+                app:layout_constraintBottom_toBottomOf="@+id/tbLayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tbLayout"
+                app:srcCompat="?attr/actionModeCloseDrawable"
+                android:contentDescription="@string/image"
+                android:focusable="true" />
+
+            <TextView
+                android:id="@+id/parkingLot"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:paddingStart="@dimen/AddReservationParkingLotPaddingStart"
+                android:text="@string/addReservation"
+                android:textColor="@color/white"
+                android:textSize="@dimen/AddReservationParkingLotTextSize"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/tbLayout"
+                app:layout_constraintStart_toEndOf="@+id/backButton"
+                app:layout_constraintTop_toTopOf="@+id/tbLayout"
+                app:layout_constraintVertical_bias="0.0"
+                tools:ignore="RtlSymmetry" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </Toolbar>
+
+
 
     <Spinner
-        android:id="@+id/spinner"
-        android:layout_width="@dimen/spinnerWidth"
-        android:layout_height="@dimen/spinnerHeight"
-        android:layout_marginTop="@dimen/spinnerMarginTop"
-        android:background="@drawable/lots"
-        android:contentDescription="@string/spinner"
-        android:entries="@array/lotSpinner"
-        android:textSize="24sp"
+        android:id="@+id/lotListButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddReservationLotListButtonHeight"
+        android:layout_marginHorizontal="@dimen/AddReservationLotListButtonMarginHorizontal"
+        android:layout_marginTop="@dimen/AddReservationLotListButtonMarginTop"
+        android:background="@drawable/itembackground"
+        android:contentDescription="@string/pickALot"
+        android:spinnerMode="dropdown"
+        android:textSize="@dimen/twentyDP"
+        app:barrierMargin="@dimen/tenDP"
+        app:flow_maxElementsWrap="6"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.689"
         app:layout_constraintStart_toStartOf="parent"
-        android:paddingStart="@dimen/spinnerPadding"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="RtlSymmetry" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:listitem="@layout/spinner_item_layout" />
 
-    <TextView
-        android:layout_width="@dimen/DateWidth"
-        android:id="@+id/StartDate"
-        android:layout_height="@dimen/DateHeight"
-        android:layout_marginTop="@dimen/DateMarginTop"
-        android:background="@drawable/lots"
-        android:gravity="center_vertical"
-        android:paddingStart="@dimen/DatePadding"
-        android:text="@string/startDate"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner"
-        tools:ignore="RtlSymmetry" />
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/AddReservationSpinnerImageWidth"
+        android:layout_height="@dimen/AddReservationSpinnerImageHeight"
+        android:layout_marginEnd="@dimen/sixteenDP"
+        app:layout_constraintBottom_toBottomOf="@+id/lotListButton"
+        app:layout_constraintEnd_toEndOf="@+id/lotListButton"
+        app:layout_constraintTop_toTopOf="@+id/lotListButton"
+        app:srcCompat="@android:drawable/arrow_down_float"
+        android:contentDescription="@string/image" />
 
-    <TextView
-        android:layout_width="@dimen/DateWidth"
-        android:id="@+id/EndDate"
-        android:layout_height="@dimen/DateHeight"
-        android:layout_marginTop="@dimen/DateMarginTop"
-        android:background="@drawable/lots"
-        android:gravity="center_vertical"
-        android:paddingStart="@dimen/DatePadding"
-        android:text="@string/endDate"
+
+
+    <EditText
+        android:id="@+id/startDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddReservationStartDateButtonHeight"
+        android:layout_margin="@dimen/fifteenDP"
+        android:layout_marginTop="@dimen/AddReservationStartDateButtonMarginTop"
+        android:background="@drawable/itembackground"
+        android:clickable="false"
+        android:focusableInTouchMode="true"
+        android:inputType="text"
+        android:singleLine="true"
+        android:focusable="false"
+        android:hapticFeedbackEnabled="false"
+        android:hint="@string/startDate"
+        android:paddingHorizontal="@dimen/AddReservationStartDateButtonPaddingHorizontal"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.551"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StartDate"
-        tools:ignore="RtlSymmetry" />
+        app:layout_constraintTop_toBottomOf="@+id/lotListButton"
+        tools:ignore="Autofill,TextFields" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/sixteenDP"
+
+        app:layout_constraintBottom_toBottomOf="@+id/startDateButton"
+        app:layout_constraintEnd_toEndOf="@+id/startDateButton"
+        app:layout_constraintTop_toTopOf="@+id/startDateButton"
+        app:srcCompat="@drawable/calendar"
+        android:contentDescription="@string/image" />
+
+
+
+    <EditText
+        android:id="@+id/endDateButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddReservationLotListButtonHeight"
+        android:layout_margin="@dimen/fifteenDP"
+        android:layout_marginTop="@dimen/AddReservationStartDateButtonMarginTop"
+        android:background="@drawable/itembackground"
+        android:clickable="false"
+        android:focusable="false"
+        android:hint="@string/endDate"
+        android:paddingHorizontal="@dimen/AddReservationStartDateButtonPaddingHorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/startDateButton"
+        tools:ignore="Autofill,TextFields" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/sixteenDP"
+
+        app:layout_constraintBottom_toBottomOf="@+id/endDateButton"
+        app:layout_constraintEnd_toEndOf="@+id/endDateButton"
+        app:layout_constraintTop_toTopOf="@+id/endDateButton"
+        app:srcCompat="@drawable/calendar"
+        android:contentDescription="@string/image" />
+
+
+
+    <EditText
+        android:id="@+id/authCodeButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddReservationStartDateButtonHeight"
+        android:layout_margin="@dimen/DeleteDialogButtonMarginHorizontal"
+        android:layout_marginTop="@dimen/AddReservationStartDateButtonMarginTop"
+        android:background="@drawable/itembackground"
+        android:hint="@string/hint"
+        android:inputType="number"
+        android:paddingHorizontal="@dimen/AddReservationStartDateButtonPaddingHorizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.689"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/endDateButton"
+        tools:ignore="Autofill" />
+
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/AddReservationStartDateButtonHeight"
+        android:layout_marginHorizontal="@dimen/DeleteDialogResLayoutMarginHorizontal"
+        android:layout_marginBottom="@dimen/fiveDP"
+        android:text="@string/save"
+        android:backgroundTint="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,29 +1,42 @@
 package com.example.my_parking_app.ViewHolders
 
 import android.view.View
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.my_parking_app.ParkingList
-import com.example.my_parking_app.R
+import com.example.domain.entities.LotReservation
+import com.example.domain.entities.ReservationDetails
+import com.example.my_parking_app.databinding.ParkingTextBinding
+import com.example.my_parking_app.tools.DateFormatter
+import com.example.my_parking_app.tools.Text
 
-class ParkingViewHolder(itemView: View) :
-    RecyclerView.ViewHolder(itemView) {
-    private val id: TextView = itemView.findViewById(R.id.lot_id)
-    private val date: TextView = itemView.findViewById(R.id.date)
-    private val hour: TextView = itemView.findViewById(R.id.hour)
+class ParkingLotViewHolder
+    (
+    view: View): RecyclerView.ViewHolder(view) {
 
+    private val binding = ParkingTextBinding.bind(view)
+    private lateinit var reservation: ReservationDetails
+    private val date: DateFormatter = DateFormatter()
 
+    fun bind(lot: LotReservation, onClickListener: (LotReservation) -> Unit) {
 
-    fun bind(parking: ParkingList){
-        id.text = parking.id
-        if(parking.vacancy) {
-            date.text = parking.date
-            hour.text = parking.hour
+        if (lot.isFree) {
+            binding.markAsFree.text = Text.Free
+            binding.day.text = ""
+            binding.monthAndYear.text = ""
+            binding.hourOfDay.text = ""
+        } else {
+            reservation = lot.reservations[0]
+            binding.markAsFree.text = ""
+            binding.day.text = date.dayFormat(reservation.startDate)
+            binding.monthAndYear.text =
+                date.monthYearFormat(reservation.startDate)
+            binding.hourOfDay.text = date.hourFormat(reservation.startDate)
         }
-        else{
-            date.setText(R.string.free2)
-            hour.text = ""
-        }
-    }
 
+        itemView.setOnClickListener { onClickListener(lot) }
+
+        binding.lotNumber.text = lot.id.toString()
     }
+}
+
+
+
