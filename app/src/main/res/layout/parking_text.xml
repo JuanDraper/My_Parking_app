@@ -1,52 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/parking_text"
+    android:id="@+id/fatherLayout"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:context=".MainActivity">
+    android:layout_height="@dimen/sixtyDP"
+    android:layout_marginHorizontal="@dimen/tenDP"
+    android:layout_marginVertical="@dimen/fiveDP"
+    android:background="@drawable/constraint_layout"
+    android:clipToPadding="false"
+    >
 
-    <TextView
-        android:id="@+id/hour"
-        android:layout_width="@dimen/ParkingTextHourWidth"
-        android:layout_height="@dimen/ParkingTextHourHeight"
-        android:layout_marginStart="@dimen/ParkingTextHourWMarginStart"
-        android:text="@string/hour"
-        android:textColor="#757575"
-        app:layout_constraintBottom_toBottomOf="@+id/figId"
-        app:layout_constraintStart_toEndOf="@+id/figId"
-        app:layout_constraintTop_toBottomOf="@id/date" />
-
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="@dimen/ParkingTextHourWidth"
-        android:layout_height="@dimen/ParkingTextHourHeight"
-        android:layout_marginTop="@dimen/parkingTextDateMarginTop"
-        android:text="@string/date"
-        app:layout_constraintStart_toStartOf="@+id/hour"
-        app:layout_constraintTop_toTopOf="@+id/figId" />
-
-    <FrameLayout
-        android:id="@+id/figId"
-        android:layout_width="@dimen/frameLayout"
-        android:layout_height="@dimen/frameLayout"
-        android:layout_marginStart="@dimen/frameLayoutMarginStart"
+    <View
+        android:id="@+id/ellipse"
+        android:layout_width="@dimen/fortyDP"
+        android:layout_height="@dimen/fortyDP"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="@dimen/fiveDP"
         android:background="@drawable/elipse"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@id/fatherLayout"
+        app:layout_constraintStart_toStartOf="@+id/fatherLayout"
+        app:layout_constraintTop_toTopOf="@id/fatherLayout"
+        />
 
     <TextView
-        android:id="@+id/lot_id"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/ParkingTextIdHeight"
-        android:textColor="#546E7A"
-        app:layout_constraintBottom_toBottomOf="@+id/figId"
-        app:layout_constraintEnd_toEndOf="@+id/figId"
-        app:layout_constraintStart_toStartOf="@+id/figId"
-        app:layout_constraintTop_toTopOf="@+id/figId"
-        tools:text="1" />
+        android:id="@+id/lotNumber"
+        android:layout_width="@dimen/fortyDP"
+        android:layout_height="@dimen/fortyDP"
+        android:gravity="center"
+        android:text="@string/_1"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/doubleTextSize"
+        app:layout_constraintBottom_toBottomOf="@+id/ellipse"
+        app:layout_constraintEnd_toEndOf="@id/ellipse"
+        app:layout_constraintStart_toStartOf="@+id/ellipse"
+        app:layout_constraintTop_toTopOf="@+id/ellipse"
+        />
 
+    <TextView
+        android:id="@+id/markAsFree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/tenDP"
+        android:text=""
+        android:textColor="@color/black"
+        android:textSize="@dimen/text_18"
+        app:layout_constraintBottom_toBottomOf="@+id/ellipse"
+        app:layout_constraintStart_toEndOf="@+id/ellipse"
+        app:layout_constraintTop_toTopOf="@+id/ellipse" />
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/twentyDP"
+        android:gravity="center"
+        android:paddingStart="@dimen/tenDP"
+        android:paddingEnd="@dimen/sixDP"
+        android:text="@string/day"
+        android:textSize="@dimen/text_14"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/ellipse"
+        app:layout_constraintTop_toTopOf="@id/ellipse"
+        />
+
+    <TextView
+        android:id="@+id/month_and_year"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/twentyDP"
+        android:gravity="center"
+        android:text="@string/date"
+        android:textSize="@dimen/text_14"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toEndOf="@id/day"
+        app:layout_constraintTop_toTopOf="@id/ellipse"
+        />
+
+    <TextView
+        android:id="@+id/hour_of_day"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/twentyDP"
+        android:gravity="center"
+        android:paddingHorizontal="@dimen/tenDP"
+        android:text="@string/hour"
+        android:textSize="@dimen/text_14"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/ellipse"
+        app:layout_constraintStart_toEndOf="@id/ellipse"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

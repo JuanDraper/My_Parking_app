@@ -1,28 +1,67 @@
 <resources>
     <string name="app_name">My_Parking_app</string>
-    <string name="date">Monday 25, May, 2022</string>
+    <string name="date"> May, 2022</string>
+    <string name="day">Monday 25</string>
     <string name="hour">08:30 PM</string>
-    <string name="busy">12 busy</string>
-    <string name="free">18 free </string>
-    <string name="free2">free</string>
+    <string name="busy">busy</string>
+    <string name="free">free </string>
+    <string name="free2">FREE</string>
     <string name="addReservation">Add_Reservation</string>
     <string name="delete">DELETE</string>
     <string name="spinner">lots available</string>
-    <string-array name="lotSpinner">
-        <item>lot 1</item>
-        <item>lot 2</item>
-        <item>lot 3</item>
-        <item>lot 4</item>
-        <item>lot 5</item>
-        <item>lot 6</item>
-        <item>lot 7</item>
+    <string name="cancel">Cancel</string>
+    <string name="deleteReservation">Delete reservation</string>
+    <string name="deleteDialogText">Are you sure you want to delete this reservation? Please input the authorization code to confirm.</string>
+    <string name="pickALot">Pick a lot</string>
+    <string name="hint">Authorization code</string>
+    <string name="hint2">Start Date</string>
+    <string name="hint3">EndDate</string>
+    <string name="save">Save</string>
+    <string name="lot">Lot</string>
+    <string name="image">image</string>
+    <string-array name="lotsNumbers">
+        <item>Pick a Lot</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
     </string-array>
-    >
     <string name="startDate">Start date</string>
     <string name="endDate">End date</string>
     <string name="AuthCode">Authorization code</string>
     <string name="SaveButton">Save</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="deleteMinus">Delete</string>
+    <string name="floating_action_button">Floating Action Button</string>
+    <string name="_30">30</string>
+    <string name="_0">0</string>
+    <string name="_1">1</string>
+    <string name="Tuesday_21">Tuesday 21</string>
+    <string name="_8_00_am">8:00 AM</string>
 
 </resources>
